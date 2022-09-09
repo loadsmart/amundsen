@@ -16,7 +16,7 @@ const configCustom: AppConfigCustom = {
     notificationsEnabled: false,
   },
   indexDashboards: {
-    enabled: false,
+    enabled: true,
   },
   indexUsers: {
     enabled: false,
@@ -25,6 +25,8 @@ const configCustom: AppConfigCustom = {
     enabled: false,
   },
   userIdLabel: 'email address',
+  logoPath: '/static/images/ls-green.png',
+  logoTitle: 'Loadsmart Amundsen',
   issueTracking: {
     enabled: false,
     issueDescriptionTemplate: '',
@@ -35,6 +37,32 @@ const configCustom: AppConfigCustom = {
     },
   },
   productTour: {},
+  tableLineage: {
+    inAppListEnabled: true,
+    inAppPageEnabled: true,
+    externalEnabled: false,
+    iconPath: 'PATH_TO_ICON',
+    isBeta: false,
+    urlGenerator: (
+      database: string,
+      cluster: string,
+      schema: string,
+      table: string
+    ) =>
+      `https://DEFAULT_LINEAGE_URL?schema=${schema}&cluster=${cluster}&db=${database}&table=${table}`,
+  },
+  columnLineage: {
+    inAppListEnabled: true,
+    inAppPageEnabled: true,
+    urlGenerator: (
+      database: string,
+      cluster: string,
+      schema: string,
+      table: string,
+      column: string
+    ) =>
+      `https://DEFAULT_LINEAGE_URL?schema=${schema}&cluster=${cluster}&db=${database}&table=${table}&column=${column}`,
+  },
 };
 
 export default configCustom;
