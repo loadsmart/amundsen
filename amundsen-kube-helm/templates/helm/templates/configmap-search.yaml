@@ -27,8 +27,8 @@ data:
   FLASK_APP_CLASS_NAME: {{ .Values.flaskApp.class }}
   {{ end }}
   {{ if .Values.oidc.enabled }}
-  FLASK_APP_MODULE_NAME: flaskoidc
-  FLASK_APP_CLASS_NAME: FlaskOIDC
+  # FLASK_APP_MODULE_NAME: flaskoidc
+  # FLASK_APP_CLASS_NAME: FlaskOIDC
   FLASK_OIDC_CLIENT_ID: {{ .Values.oidc.search.client_id }}
   FLASK_OIDC_CLIENT_SECRET: {{ .Values.oidc.search.client_secret }}
 {{ toYaml .Values.oidc.configs | indent 2 }}
