@@ -1,0 +1,15 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: amundsen
+  description: Amundsen is a metadata driven application for improving the productivity of data analysts, data scientists and engineers when interacting with data
+  annotations:
+    github.com/project-slug: loadsmart/amundsen
+    opslevel.com/tier: tier_4
+  tags:
+    - python
+    - typescript
+spec:
+  type: service
+  owner: data-engineering
+  lifecycle: production
